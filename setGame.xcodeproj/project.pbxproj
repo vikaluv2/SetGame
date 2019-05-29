@@ -60,9 +60,9 @@
 		0171506C229632730037C44C /* setGame */ = {
 			isa = PBXGroup;
 			children = (
+				01715071229632730037C44C /* Main.storyboard */,
 				0171506F229632730037C44C /* ViewController.swift */,
 				01715086229EFD9E0037C44C /* Button.swift */,
-				01715071229632730037C44C /* Main.storyboard */,
 				01715080229D43340037C44C /* PlayingCard.swift */,
 				01715084229E760D0037C44C /* SetGame.swift */,
 				01715074229632750037C44C /* Assets.xcassets */,
