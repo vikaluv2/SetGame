@@ -1,5 +1,5 @@
 //
-//  PlayingCardDeck.swift
+//  SetGame.swift
 //  setGame
 //
 //  Created by Vika Maopa Toloke on 5/28/19.

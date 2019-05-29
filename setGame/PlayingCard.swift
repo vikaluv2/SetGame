@@ -7,6 +7,7 @@
 //
 
 import Foundation
+//this is what the card will be like
 
 struct SetCard: Hashable {
     var hashValue: Int {
