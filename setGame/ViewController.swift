@@ -1,144 +1,88 @@
 //
-//  ViewController.swift
+//  AppDelegate.swift
 //  setGame
 //
-//  Created by Vika Maopa Toloke on 5/28/19.
+//  Created by Vika Maopa Toloke on 5/22/19.
 //  Copyright © 2019 Vika Maopa Toloke. All rights reserved.
 //
+
 import UIKit
 
 class ViewController: UIViewController {
-    // MARK: - Model
-    private lazy var game: SetGame = {
-        var game = SetGame(startCards: startCards, maxCards: cardButtons.count)
-        return game
-    }()
     
-    private let startCards = 12
-    private lazy var currentCards = startCards
-    private var score = 0 {
-        didSet {
-            scoreLabel?.text = "Score: \(score)"
-        }
-    }
-    private var selectedCards = [SetCard]()
-    private lazy var vailablePositions = {
-        return Array<Bool>(repeating: false, count: cardButtons.count)
-    }()
+    @IBOutlet private var setCardButtons: [UIButton]!
     
-    // MARK: - View Controller Lifecycle
+    @IBOutlet weak var dealButton: UIButton!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    let setGame = SetGame()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
+        resetButtons()
+        updateViewFromModel()
     }
     
-    // MARK: - Outlet
-    @IBOutlet private weak var scoreLabel: UILabel! {
-        didSet {
-            scoreLabel?.text = "Score: \(score)"
-        }
-    }
-    @IBOutlet private var cardButtons: [UIButton]! {
-        didSet {
-            updateUI()
-        }
-    }
-    @IBOutlet weak var situationLabel: UILabel!
-    
-    @IBOutlet weak var dealThreeMoreCardsButton: UIButton! { didSet { updateUI() } }
-    
-    // MARK: - Action
-    @IBAction private func touchCard(_ sender: UIButton) {
-        if let cardNumber = cardButtons.index(of: sender) {
-            game.chooseCard(at: cardNumber)
-            score = game.score
-            updateUI()
-        }
-    }
-    @IBAction private func newGame() {
-        game.new(startNumberOfCards: startCards, maxNumberOfCards: cardButtons.count)
-        updateUI()
-    }
-    @IBAction private func dealThreeMoreCards() {
-        if vailablePositions.filter({ $0 }).count >= 3 {
-            game.dealThreeMoreCard()
-            updateUI()
+    func resetButtons() { //attributes of the buttons
+        for buttonIndex in setCardButtons.indices {
+            let button = setCardButtons[buttonIndex]
+            button.deselect()
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 28.0) //size of chars
+            button.backgroundColor = #colorLiteral(red: 1, green: 0.5768225789, blue: 0, alpha: 0) //makes card (color) there but its invisible
+            button.layer.borderColor =  #colorLiteral(red: 1, green: 0.5768225789, blue: 0, alpha: 0) //border is clear too
+            button.setAttributedTitle(nil, for: UIControl.State.normal)
         }
     }
     
-    // MARK: - UI
-    private func updateUI() {
-        for index in cardButtons.indices {
-            let button = cardButtons[index]
-            if let card = game.deskCards[index] { // has card
-                // draw picture
-                button.isEnabled = true
-                button.setAttributedTitle(draw(by: card), for: .normal)
-                button.layer.borderWidth = 2
-                button.backgroundColor = UIColor.white
-                if card.isChose {
-                    button.isEnabled = true
-                    button.layer.borderColor = UIColor.blue.cgColor
-                } else {
-                    button.isEnabled = true
-                    button.layer.borderColor = UIColor.white.cgColor
-                }
-                vailablePositions[index] = false
-            } else { // no card
-                button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-                button.layer.borderWidth = 0
-                button.isEnabled = false
-                button.setAttributedTitle(nil, for: .normal)
-                vailablePositions[index] = true
+    @IBAction private func selectCard(_ sender: UIButton) {
+        if let cardIndex = setCardButtons.index(of: sender) {
+            if cardIndex < setGame.cardsInGame.count {
+                setGame.select(card: setGame.cardsInGame[cardIndex])
             }
+            updateViewFromModel()
         }
-        // TODO: add game situation
-        score = game.score
-        dealThreeMoreCardsButton.isEnabled = vailablePositions.filter({ $0 }).count >= 3 && game.hasThreeMoreCards
     }
     
-    private func draw(by card: SetCard) -> NSAttributedString {
-        // set symbol
-        let symbol = DrawAttributes[AttributeKey.Symbol]![card.symbol.rawValue] as! String
-        let number = DrawAttributes[AttributeKey.Number]![card.number.rawValue] as! Int
-        let picture = symbol.multiple(times: number)
-        
-        // set attributes
-        var attributes = [NSAttributedString.Key: Any]()
-        let colorWithAlpha = UIColor.withAlphaComponent(DrawAttributes[AttributeKey.Color]![card.color.rawValue] as! UIColor)
-        let alpha = CGFloat(DrawAttributes[AttributeKey.Shading]![card.shading.rawValue] as! Double)
-        if alpha == 0 {
-            attributes[.strokeColor] = colorWithAlpha(1)
-            attributes[.strokeWidth] = 3
-        } else {
-            let striped = colorWithAlpha(alpha)
-            attributes[.foregroundColor] = striped
+    @IBAction func newGame() {
+        dealButton.isEnabled = true
+        setGame.newGame()
+        resetButtons()
+        updateViewFromModel()
+    }
+    
+    @IBAction func addThreeCards() {
+        setGame.addCards(numberOfCardsToSelect: 3)
+        updateViewFromModel()
+        if setGame.cardsInGame.count >= 24 {
+            dealButton.isEnabled = false
         }
-        return NSAttributedString(string: picture, attributes: attributes)
     }
     
-    private struct AttributeKey {
-        static let Color = "color"
-        static let Symbol = "symbol"
-        static let Shading = "shading"
-        static let Number = "number"
+    private func updateViewFromModel() {
+        var cardButtonIndex = 0
+        resetButtons()
+        scoreLabel.text = "Score: \(setGame.score)" //keeps track of the score
+        for card in setGame.cardsInGame {
+            let button = setCardButtons[cardButtonIndex]
+            ButtonRender.chosenCard(cardToChoose: card,
+                                    onButton: button,
+                                    selectButton: setGame.cardIsSelected(card: card),
+                                    isSet: setGame.isSet())
+            cardButtonIndex += 1
+        }
     }
-    
-    private var DrawAttributes: [String : [Any]] = [
-        AttributeKey.Color : [UIColor.red, UIColor.green, UIColor.blue],
-        AttributeKey.Symbol : ["▲", "●", "■"],
-        AttributeKey.Shading : [1.0, 0.15, 0.0],
-        AttributeKey.Number : [1, 2, 3]
-    ]
-    
 }
 
-extension String {
-    func multiple(times: Int) -> String {
-        var str = ""
-        for _ in 0..<times {
-            str.append(self)
+
+extension Int {
+    func arc4Random() -> Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
         }
-        return str
     }
 }
