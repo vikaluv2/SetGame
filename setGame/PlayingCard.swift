@@ -8,46 +8,39 @@
 
 import Foundation
 
-struct PlayingCard
-{
+struct SetCard: Hashable {
+    var hashValue: Int {
+        return color.rawValue * 1000 +
+            symbol.rawValue * 100 +
+            shading.rawValue * 10 +
+            number.rawValue
+        
+    }
     
-    var suit: Suit
-    var rank: Rank
+    static func ==(lhs: SetCard, rhs: SetCard) -> Bool {
+        return lhs.color == rhs.color && lhs.symbol == rhs.symbol && lhs.shading == rhs.shading && lhs.number == rhs.number
+    }
+    
+    enum Attribute: Int, Hashable {
+        case first, second, third
+        static let all: [Attribute] = [.first, .second, .third]
+    }
+    
+    let color: Attribute
+    let symbol: Attribute
+    let shading: Attribute
+    let number: Attribute
+    
+    //    var isMatched = false
+    var isChose = false
+    
+}
 
-    enum Suit : String{
-        case spades = "♠️"
-        case hearts = "♥️"
-        case diamonds = "♦️"
-        case clubs = "♣️"
-        
-        static var all = [Suit.spades,.hearts,.clubs,.diamonds]
-    }
-    
-    enum Rank{
-        case ace
-        case face(String) //either jack queen or king
-        case numeric(Int)
-        
-        var order: Int {
-            switch self {
-            case .ace: return 1
-            case .numeric(let pips): return pips
-            case .face(let kind) where kind == "J": return 11
-            case .face(let kind) where kind == "Q": return 12
-            case .face(let kind) where kind == "K": return 13
-            default: return 0
-            }
-        }
-        
-        static var all: [Rank] {
-            var allRanks = [Rank.ace]
-            for pips in 2...10 {
-                allRanks.append(Rank.numeric(pips))
-            }
-            
-            allRanks += [Rank.face("J"),.face("Q"),.face("K")]
-            return allRanks
-        }
-    }
-    
+extension SetCard {
+    init(color: Attribute, symbol: Attribute, shading: Attribute, number: Attribute) {
+        self.color = color
+        self.symbol = symbol
+        self.shading = shading
+        self.number = number
+}
 }
