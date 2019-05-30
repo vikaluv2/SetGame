@@ -27,7 +27,7 @@ class SetGame {
         cardsInGame.removeAll()
         selectedCards.removeAll()
         
-        generateAllCardCombinations()
+        generateAllCardCombinations() //restarts the game now
         addCards(numberOfCardsToSelect: 12)
         
     }
@@ -38,16 +38,15 @@ class SetGame {
                 for number in CardNumber.allValues {
                     for shading in CardType.allValues {
                         let card = Card(cardColor: color, cardSymbol: symbol, cardNumber: number, cardType: shading)
-                        availableCards.append(card)
+                        availableCards.append(card) //makes a card now
                     }
                 }
             }
         }
     }
     
-
-    
-    private func addCard() { //makes it random the added cards
+    //makes it random the added cards
+    private func addCard() {
         let selectedCard = availableCards.remove(at: availableCards.count.arc4Random())
         cardsInGame.append(selectedCard) //appends for
     }
@@ -62,23 +61,26 @@ class SetGame {
         return selectedCards.index(of: card) != nil //not null bc selected
     }
     
-    //THIS IS HOW THE GAME works
+    
+    //THIS IS HOW THE GAME BASICALLY WORKS
     func isSet() -> Bool {
-        if selectedCards.count != 3 { //not 3, dont do anything
+        
+        if selectedCards.count != 3 { //not 3, dont do anything--else
             return false
         }
         
         //scenario 1
-        if selectedCards[0].cardColor == selectedCards[1].cardColor {
-            if selectedCards[0].cardColor != selectedCards[2].cardColor {
+        if selectedCards[0].cardColor == selectedCards[1].cardColor { //if same
+            if selectedCards[0].cardColor != selectedCards[2].cardColor { //else return false;not it
                 return false
             }
-        } else if selectedCards[1].cardColor == selectedCards[2].cardColor {
+        } else if selectedCards[1].cardColor == selectedCards[2].cardColor { //if not--check color
             return false
         } else if (selectedCards[0].cardColor == selectedCards[2].cardColor) {
             return false
         }
-        //
+        
+        //amount/number of shapes in are the same
         if selectedCards[0].cardNumber == selectedCards[1].cardNumber {
             if selectedCards[0].cardNumber != selectedCards[2].cardNumber {
                 return false
@@ -88,7 +90,8 @@ class SetGame {
         } else if (selectedCards[0].cardNumber == selectedCards[2].cardNumber) {
             return false
         }
-        //
+        
+        //cardtype is of the same value
         if selectedCards[0].cardType == selectedCards[1].cardType {
             if selectedCards[0].cardType != selectedCards[2].cardType {
                 return false
@@ -98,7 +101,7 @@ class SetGame {
         } else if (selectedCards[0].cardType == selectedCards[2].cardType) {
             return false
         }
-        //
+        //symbol the same
         if selectedCards[0].cardSymbol == selectedCards[1].cardSymbol {
             if selectedCards[0].cardSymbol != selectedCards[2].cardSymbol {
                 return false
@@ -121,21 +124,24 @@ class SetGame {
                     cardsInGame.remove(at: selectedCardInGameIndex) //removes the matched cards
                     if availableCards.count > 0 {
                         let selectedCard = availableCards.remove(at: availableCards.count.arc4Random())
-                        cardsInGame.insert(selectedCard, at: selectedCardInGameIndex)
+                        cardsInGame.insert(selectedCard, at: selectedCardInGameIndex) //cards are being replaced
                     }
                 }
             }
             selectedCards.removeAll()
-            score += 3
+            score += 3 //if match its incrementing by 3
+            
         } else if selectedCards.count == 3 && !isSet() {
-            selectedCards.removeAll()
-            score -= 1
+            selectedCards.removeAll() //removes all because it already found the pair
+            score -= 1 //decrements when going down by the pair
         }
+        if let cardIndex = selectedCards.firstIndex(of: card){
+                selectedCards.remove(at: cardIndex) //still not deselecting
         
-        if let card2Select = selectedCards.index(of: card) {
-            selectedCards.remove(at: card2Select) //removes it when selected if not needed
-        } else {
+           
+        } else {}
             selectedCards.append(card)
         }
     }
-}
+
+
