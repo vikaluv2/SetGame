@@ -5,23 +5,29 @@
 //  Created by Vika Maopa Toloke on 5/22/19.
 //  Copyright © 2019 Vika Maopa Toloke. All rights reserved.
 
-//Card Attributes
+
 import Foundation
 
+//equatable is gonna be made a duplicate
 struct Card : Equatable {
     
-    static func ==(lhs: Card, rhs: Card) -> Bool {
+    //protocol equatable
+    //referenced from another's code
+    
+    
+    /*static func ==(lhs: Card, rhs: Card) -> Bool { //always boolean
         return lhs.cardColor == rhs.cardColor &&
             lhs.cardNumber == rhs.cardNumber &&
-            lhs.cardType == rhs.cardType &&
+            lhs.cardType == rhs.cardType && //comparison starts
             lhs.cardSymbol == rhs.cardSymbol
-    }
+    }*/
     
     let cardColor: CardColor
     let cardSymbol: CardSymbol
     let cardNumber: CardNumber
     let cardType: CardType
 }
+
 //enums are only value types
 enum CardColor {
     case red

@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         for buttonIndex in setCardButtons.indices {
             let button = setCardButtons[buttonIndex]
             button.deselect()
+            button.layer.cornerRadius = 8.0 //from hint
             button.titleLabel?.font = UIFont.systemFont(ofSize: 28.0) //part of hint
             button.backgroundColor = #colorLiteral(red: 1, green: 0.5768225789, blue: 0, alpha: 0)
             button.layer.borderColor =  #colorLiteral(red: 1, green: 0.5768225789, blue: 0, alpha: 0) //its there but you csnt see it until you draw the card
@@ -37,9 +38,10 @@ class ViewController: UIViewController {
     }
     
     
+    
     @IBAction private func selectCard(_ sender: UIButton) {
-        if let cardIndex = setCardButtons.index(of: sender) {
-            if cardIndex < setGame.cardsInGame.count {
+        if let cardIndex = setCardButtons.index(of: sender) { //that card
+            if cardIndex < setGame.cardsInGame.count { //the number of cards
                 setGame.select(card: setGame.cardsInGame[cardIndex])
             }
             updateViewFromModel()
@@ -62,22 +64,22 @@ class ViewController: UIViewController {
     }
 
     private func updateViewFromModel() {
-        var cardButtonIndex = 0
+        var cardButtonin = 0
         resetButtons()
         scoreLabel.text = "Score: \(setGame.score)"
         for card in setGame.cardsInGame {
-            let button = setCardButtons[cardButtonIndex]
+            let button = setCardButtons[cardButtonin]
             Button.chosenCard(cardToChoose: card,
                                     onButton: button,
                                     selectButton: setGame.cardIsSelected(card: card),
                                     isSet: setGame.isSet())
-            cardButtonIndex += 1
+            cardButtonin += 1 //implementing by 1
         }
     }
 }
 
 //copied from lec 2 concentration
-extension Int {
+extension Int { //whatever Int will randomize
     func arc4Random() -> Int {
         if self > 0 {
             return Int(arc4random_uniform(UInt32(self)))

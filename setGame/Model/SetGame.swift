@@ -62,7 +62,7 @@ class SetGame {
     }
     
     
-    //THIS IS HOW THE GAME BASICALLY WORKS
+    //THIS IS HOW THE GAME BASICALLY WORKS (LOGIC)
     func isSet() -> Bool {
         
         if selectedCards.count != 3 { //not 3, dont do anything--else

@@ -63,8 +63,7 @@
 				01715071229632730037C44C /* Main.storyboard */,
 				0171506F229632730037C44C /* ViewController.swift */,
 				01715086229EFD9E0037C44C /* Button.swift */,
-				01715080229D43340037C44C /* PlayingCard.swift */,
-				01715084229E760D0037C44C /* SetGame.swift */,
+				01715089229F70F80037C44C /* Model */,
 				01715074229632750037C44C /* Assets.xcassets */,
 				0171507F229D42E80037C44C /* Supporting Files */,
 				01715079229632750037C44C /* Info.plist */,
@@ -79,6 +78,15 @@
 				01715076229632750037C44C /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		01715089229F70F80037C44C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01715080229D43340037C44C /* PlayingCard.swift */,
+				01715084229E760D0037C44C /* SetGame.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
