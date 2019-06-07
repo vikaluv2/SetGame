@@ -1,64 +1,48 @@
 //
-//  PlayingCard.swift
-//  setGame
+//  SetCardDeck.swift
+//  SetGame
 //
-//  Created by Vika Maopa Toloke on 5/22/19.
-//  Copyright © 2019 Vika Maopa Toloke. All rights reserved.
-
+//  Created by Christopher Slade on 6/4/19.
+//  Copyright © 2019 Christopher Slade. All rights reserved.
+//
 
 import Foundation
 
-//equatable is gonna be made a duplicate
-struct Card : Equatable {
+struct SetCardDeck {
     
-    //protocol equatable
-    //referenced from another's code
+    private(set) var cards: [SetCard]
     
+    init() {
+        cards = [SetCard]()
+        for color in SetCard.Variant.all {
+            for shape in SetCard.Variant.all {
+                for shade in SetCard.Variant.all {
+                    for number in SetCard.Variant.all {
+                        cards.append(SetCard(color: color, shape: shape, shade: shade, number: number))
+                    }
+                }
+            }
+        }
+    }
     
-    /*static func ==(lhs: Card, rhs: Card) -> Bool { //always boolean
-        return lhs.cardColor == rhs.cardColor &&
-            lhs.cardNumber == rhs.cardNumber &&
-            lhs.cardType == rhs.cardType && //comparison starts
-            lhs.cardSymbol == rhs.cardSymbol
-    }*/
+    mutating func draw() -> SetCard? {
+        if cards.count > 0 {
+            return cards.remove(at: cards.count.arc4Random)
+        } else {
+            return nil
+        }
+    }
     
-    let cardColor: CardColor
-    let cardSymbol: CardSymbol
-    let cardNumber: CardNumber
-    let cardType: CardType
 }
 
-//enums are only value types
-enum CardColor {
-    case red
-    case green
-    case purple
-    
-    static let allValues = [red, green, purple]
+extension Int {
+    var arc4Random: Int {
+        if self > 0 {
+            return Int(arc4random_uniform(UInt32(self)))
+        } else if self < 0 {
+            return -Int(arc4random_uniform(UInt32(abs(self))))
+        } else {
+            return 0
+        }
+    }
 }
-
-enum CardSymbol {
-    case diamond
-    case squiggle
-    case oval
-    
-    static let allValues = [diamond, squiggle, oval]
-}
-
-enum CardNumber {
-    case one
-    case two
-    case three
-    
-    static let allValues = [one, two, three]
-}
-
-enum CardType {
-    case solid
-    case striped
-    case open
-    
-    static let allValues = [solid, striped, open]
-}
-
-

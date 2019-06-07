@@ -1,92 +1,119 @@
 //
-//  AppDelegate.swift
-//  setGame
+//  ViewController.swift
+//  SetGame
 //
-//  Created by Vika Maopa Toloke on 5/22/19.
-//  Copyright © 2019 Vika Maopa Toloke. All rights reserved.
+//  Created by Christopher Slade on 6/4/19.
+//  Copyright © 2019 Christopher Slade. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet private var setCardButtons: [UIButton]!
+    var game = SetCardGame()
     
-    @IBOutlet weak var dealThreeMoreCardsButton: UIButton!
+    @IBOutlet weak var ScoreLabel: UILabel!
     
-    @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet var cardButtons: [UIButton]!
     
-    let setGame = SetGame()
+    
+    @IBOutlet weak var DealThree: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        resetButtons()
+        // Do any additional setup after loading the view.
         updateViewFromModel()
     }
     
-    func resetButtons() { //attributes of buttons that will come up
-        for buttonIndex in setCardButtons.indices {
-            let button = setCardButtons[buttonIndex]
-            button.deselect()
-            button.layer.cornerRadius = 8.0 //from hint
-            button.titleLabel?.font = UIFont.systemFont(ofSize: 28.0) //part of hint
-            button.backgroundColor = #colorLiteral(red: 1, green: 0.5768225789, blue: 0, alpha: 0)
-            button.layer.borderColor =  #colorLiteral(red: 1, green: 0.5768225789, blue: 0, alpha: 0) //its there but you csnt see it until you draw the card
-            button.setAttributedTitle(nil, for: UIControl.State.normal)
-        }
-    }
-    
-    
-    
-    @IBAction private func selectCard(_ sender: UIButton) {
-        if let cardIndex = setCardButtons.index(of: sender) { //that card
-            if cardIndex < setGame.cardsInGame.count { //the number of cards
-                setGame.select(card: setGame.cardsInGame[cardIndex])
-            }
-            updateViewFromModel()
-        }
-    }
-    
-    @IBAction func newGame() {
-        dealThreeMoreCardsButton.isEnabled = true
-        setGame.newGame()
-        resetButtons()
-        updateViewFromModel()
-    }
-    
-    @IBAction func addThreeNewCards() {
-        setGame.addCards(numberOfCardsToSelect: 3) //adds 3 cards at a time else crash
-        updateViewFromModel()
-        if setGame.cardsInGame.count >= 24 { //24 cards total to display but the deck is
-            dealThreeMoreCardsButton.isEnabled = false //cant
-        }
-    }
-
     private func updateViewFromModel() {
-        var cardButtonin = 0
-        resetButtons()
-        scoreLabel.text = "Score: \(setGame.score)"
-        for card in setGame.cardsInGame {
-            let button = setCardButtons[cardButtonin]
-            Button.chosenCard(cardToChoose: card,
-                                    onButton: button,
-                                    selectButton: setGame.cardIsSelected(card: card),
-                                    isSet: setGame.isSet())
-            cardButtonin += 1 //implementing by 1
+        for index in cardButtons.indices {
+            if index < game.cardsInPlay.count {
+                cardButtons[index].alpha = 1
+                update(cardButton: cardButtons[index], with: game.cardsInPlay[index])
+            } else {
+                cardButtons[index].alpha = 0
+            }
+            
+            // for each card button on the UI do the following
+            // if the model has a card at that position {
+            //make card appear
+            //make card look like the card in the model by calling
+            //update(cardButton: cardButtons[index], with: game.cardsInPlay[index])
+            // } else {
+            //make card disappear
+            //}
+            //update the score
         }
     }
-}
-
-//copied from lec 2 concentration
-extension Int { //whatever Int will randomize
-    func arc4Random() -> Int {
-        if self > 0 {
-            return Int(arc4random_uniform(UInt32(self)))
-        } else if self < 0 {
-            return -Int(arc4random_uniform(UInt32(abs(self))))
-        } else {
-            return 0
-        }
+    
+    //you will want to connect your card buttons to this method
+    @IBAction func cardTapped(_ sender: UIButton) {
+        //find out with cardButton was tapped
+        //tell the game to select that card
+        updateViewFromModel()
     }
+    
+    //you will want to connect your deal button to this method
+    @IBAction func dealPressed() {
+        //make sure you won't overfill your UI
+        //IF not tell the game to deal 3 cards
+        updateViewFromModel()
+    }
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        game = SetCardGame()
+        updateViewFromModel()
+        
+        
+    }
+    //    private func newSetCardGame() -> SetCardGame {
+    //        return SetCardGame(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    //    }
+    
+    private func update(cardButton: UIButton, with card: SetCard) {
+        var buttonTitle = ""
+        var color = UIColor.white
+        switch card.shape {
+        case.v1:
+            buttonTitle = "▲"
+        case.v2:
+            buttonTitle = "●"
+        case.v3:
+            buttonTitle = "■"
+        }
+        
+        switch card.number {
+        case.v1:
+            break
+        case.v2:
+            buttonTitle = buttonTitle + buttonTitle
+        case.v3:
+            buttonTitle = buttonTitle + buttonTitle + buttonTitle
+        }
+        switch card.color {
+        case.v1:
+            color = UIColor.blue
+        case.v2:
+            color = UIColor.red
+        case.v3:
+            color = UIColor.green
+        }
+        let attributes: [NSAttributedString.Key : Any] = [
+            .strokeColor : color,
+            .strokeWidth : 5.0
+            
+        ]
+        
+        cardButton.setAttributedTitle(NSAttributedString(string: buttonTitle, attributes: attributes), for: .normal)
+        
+        //In here you will have 4 switch statements to update the button to match the card
+        //You will also need to update the buttons selection ...
+        //If the card is select, draw a border around the cardButton
+        //else remove the border around the button.
+    }
+    
+    
+    
+    
 }
