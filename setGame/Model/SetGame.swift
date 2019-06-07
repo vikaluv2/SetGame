@@ -25,7 +25,7 @@ struct SetCardGame {
     }
     
     var isMatch: Bool {
-        //        if selectedCards = isAMatch {
+        if selectedCards = isAMatch {
         //            return true
         //
         //TODO write code that checks if the current select is a match or not. Return true if it is.

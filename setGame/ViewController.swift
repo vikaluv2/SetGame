@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     
     var game = SetCardGame()
     
-    private var Score //game score
+    private var Score = 0 //game score
     
     @IBOutlet weak var ScoreLabel: UILabel!
     
@@ -37,7 +37,8 @@ class ViewController: UIViewController {
                 cardButtons[index].alpha = 0
             }
             
-            Score = 0;
+            Score+=3
+            Score-=3 
             for index in cardButtons.indices{
                 
                 if
