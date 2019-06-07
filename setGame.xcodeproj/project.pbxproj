@@ -14,7 +14,7 @@
 		01715078229632750037C44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01715076229632750037C44C /* LaunchScreen.storyboard */; };
 		01715081229D43340037C44C /* PlayingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01715080229D43340037C44C /* PlayingCard.swift */; };
 		01715085229E760D0037C44C /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01715084229E760D0037C44C /* SetGame.swift */; };
-		01715087229EFD9E0037C44C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01715086229EFD9E0037C44C /* Button.swift */; };
+		0199019022AA730200D56C5A /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199018F22AA730200D56C5A /* SetCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		01715079229632750037C44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01715080229D43340037C44C /* PlayingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayingCard.swift; sourceTree = "<group>"; };
 		01715084229E760D0037C44C /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
-		01715086229EFD9E0037C44C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		0199018F22AA730200D56C5A /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			children = (
 				01715071229632730037C44C /* Main.storyboard */,
 				0171506F229632730037C44C /* ViewController.swift */,
-				01715086229EFD9E0037C44C /* Button.swift */,
+				0199018F22AA730200D56C5A /* SetCard.swift */,
 				01715089229F70F80037C44C /* Model */,
 				01715074229632750037C44C /* Assets.xcassets */,
 				0171507F229D42E80037C44C /* Supporting Files */,
@@ -160,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01715087229EFD9E0037C44C /* Button.swift in Sources */,
+				0199019022AA730200D56C5A /* SetCard.swift in Sources */,
 				01715070229632730037C44C /* ViewController.swift in Sources */,
 				01715085229E760D0037C44C /* SetGame.swift in Sources */,
 				01715081229D43340037C44C /* PlayingCard.swift in Sources */,
