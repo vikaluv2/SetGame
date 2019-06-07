@@ -14,7 +14,7 @@
 		01715078229632750037C44C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01715076229632750037C44C /* LaunchScreen.storyboard */; };
 		01715085229E760D0037C44C /* SetGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01715084229E760D0037C44C /* SetGame.swift */; };
 		0199019222AA75D000D56C5A /* SetCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199019122AA75D000D56C5A /* SetCard.swift */; };
-		0199019422AA761000D56C5A /* SetCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199019322AA761000D56C5A /* SetCardDeck.swift */; };
+		0199019622AA768B00D56C5A /* SetCardDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0199019522AA768B00D56C5A /* SetCardDeck.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		01715079229632750037C44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01715084229E760D0037C44C /* SetGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGame.swift; sourceTree = "<group>"; };
 		0199019122AA75D000D56C5A /* SetCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCard.swift; sourceTree = "<group>"; };
-		0199019322AA761000D56C5A /* SetCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardDeck.swift; sourceTree = "<group>"; };
+		0199019522AA768B00D56C5A /* SetCardDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetCardDeck.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 		0171506C229632730037C44C /* setGame */ = {
 			isa = PBXGroup;
 			children = (
-				0199019322AA761000D56C5A /* SetCardDeck.swift */,
+				0199019522AA768B00D56C5A /* SetCardDeck.swift */,
 				01715071229632730037C44C /* Main.storyboard */,
 				0171506F229632730037C44C /* ViewController.swift */,
 				01715089229F70F80037C44C /* Model */,
@@ -160,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0199019422AA761000D56C5A /* SetCardDeck.swift in Sources */,
+				0199019622AA768B00D56C5A /* SetCardDeck.swift in Sources */,
 				01715070229632730037C44C /* ViewController.swift in Sources */,
 				01715085229E760D0037C44C /* SetGame.swift in Sources */,
 				0199019222AA75D000D56C5A /* SetCard.swift in Sources */,
