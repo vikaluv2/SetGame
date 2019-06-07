@@ -29,8 +29,8 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="button"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qaw-G7-R1M"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2zl-kD-fed"/>
                                                 </connections>
                                             </button>
@@ -38,6 +38,7 @@
                                                 <rect key="frame" x="97.666666666666686" y="0.0" width="89.333333333333314" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8fx-EH-8e4"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EVA-ym-5gu"/>
                                                 </connections>
                                             </button>
@@ -45,6 +46,7 @@
                                                 <rect key="frame" x="195" y="0.0" width="89.666666666666686" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pNA-bb-BdH"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91R-1B-R1t"/>
                                                 </connections>
                                             </button>
@@ -52,6 +54,7 @@
                                                 <rect key="frame" x="292.66666666666669" y="0.0" width="89.333333333333314" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HDv-Pe-LjV"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Izo-XK-X80"/>
                                                 </connections>
                                             </button>
@@ -64,6 +67,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KOy-1i-quI"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cak-N5-HV8"/>
                                                 </connections>
                                             </button>
@@ -71,6 +75,7 @@
                                                 <rect key="frame" x="97.666666666666686" y="0.0" width="89.333333333333314" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Bm-DA-fwk"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qC0-6J-jJZ"/>
                                                 </connections>
                                             </button>
@@ -78,6 +83,7 @@
                                                 <rect key="frame" x="195" y="0.0" width="89.666666666666686" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ybu-O9-sJQ"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j6Z-bb-sRl"/>
                                                 </connections>
                                             </button>
@@ -85,6 +91,7 @@
                                                 <rect key="frame" x="292.66666666666669" y="0.0" width="89.333333333333314" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8q-AV-LhW"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Ef-Hn-FvI"/>
                                                 </connections>
                                             </button>
@@ -97,6 +104,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rad-ir-d9S"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mcf-hj-cTa"/>
                                                 </connections>
                                             </button>
@@ -104,6 +112,7 @@
                                                 <rect key="frame" x="97.666666666666686" y="0.0" width="89.333333333333314" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ebe-dy-cjb"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FwZ-8p-6TO"/>
                                                 </connections>
                                             </button>
@@ -111,6 +120,7 @@
                                                 <rect key="frame" x="195" y="0.0" width="89.666666666666686" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lU9-uQ-BX9"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oqe-Sk-fFs"/>
                                                 </connections>
                                             </button>
@@ -118,6 +128,7 @@
                                                 <rect key="frame" x="292.66666666666669" y="0.0" width="89.333333333333314" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wss-fP-mC9"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GVk-4J-SDb"/>
                                                 </connections>
                                             </button>
@@ -130,6 +141,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kug-hk-TL4"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g9h-Z1-C6b"/>
                                                 </connections>
                                             </button>
@@ -137,6 +149,7 @@
                                                 <rect key="frame" x="97.666666666666686" y="0.0" width="89.333333333333314" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ajf-G7-lQt"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6WG-58-jXO"/>
                                                 </connections>
                                             </button>
@@ -144,6 +157,7 @@
                                                 <rect key="frame" x="195" y="0.0" width="89.666666666666686" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wOg-Et-QTR"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CGY-P6-2pd"/>
                                                 </connections>
                                             </button>
@@ -151,6 +165,7 @@
                                                 <rect key="frame" x="292.66666666666669" y="0.0" width="89.333333333333314" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Smv-9u-WOv"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MUp-7j-c2F"/>
                                                 </connections>
                                             </button>
@@ -163,6 +178,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZ6-Ah-wFb"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6IJ-UN-udO"/>
                                                 </connections>
                                             </button>
@@ -170,6 +186,7 @@
                                                 <rect key="frame" x="97.666666666666686" y="0.0" width="89.333333333333314" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qK1-Qd-M8i"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jX3-VP-9A4"/>
                                                 </connections>
                                             </button>
@@ -177,6 +194,7 @@
                                                 <rect key="frame" x="195" y="0.0" width="89.666666666666686" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hdE-0x-gLb"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H1U-6J-dtQ"/>
                                                 </connections>
                                             </button>
@@ -184,6 +202,7 @@
                                                 <rect key="frame" x="292.66666666666669" y="0.0" width="89.333333333333314" height="79.666666666666671"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oNr-1o-7ET"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="icp-TM-QDM"/>
                                                 </connections>
                                             </button>
@@ -196,6 +215,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="89.666666666666671" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H73-Xk-dsv"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kos-hf-5or"/>
                                                 </connections>
                                             </button>
@@ -203,6 +223,7 @@
                                                 <rect key="frame" x="97.666666666666686" y="0.0" width="89.333333333333314" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CJo-eI-ba0"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="klI-GW-iPD"/>
                                                 </connections>
                                             </button>
@@ -210,6 +231,7 @@
                                                 <rect key="frame" x="195" y="0.0" width="89.666666666666686" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3f-uk-jfX"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XaO-4g-eAN"/>
                                                 </connections>
                                             </button>
@@ -217,6 +239,7 @@
                                                 <rect key="frame" x="292.66666666666669" y="0.0" width="89.333333333333314" height="79.333333333333329"/>
                                                 <color key="backgroundColor" red="0.89020806549999998" green="0.89017456770000003" blue="0.89019727709999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <connections>
+                                                    <action selector="cardTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mJ-cD-yAD"/>
                                                     <action selector="selectCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rfd-Yb-H88"/>
                                                 </connections>
                                             </button>
@@ -236,6 +259,7 @@
                                         </state>
                                         <connections>
                                             <action selector="newGame" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z57-fX-HAE"/>
+                                            <action selector="newGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9PK-8K-MCP"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -250,6 +274,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addThreeNewCards" destination="BYZ-38-t0r" eventType="touchUpInside" id="vd8-SW-iWt"/>
+                                    <action selector="dealPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="ozT-bk-enr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haJ-kR-e0U">
@@ -276,6 +301,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="DealThree" destination="QB1-PU-rlW" id="nEM-gB-zm4"/>
+                        <outlet property="ScoreLabel" destination="haJ-kR-e0U" id="jqU-5e-VHW"/>
                         <outlet property="dealThreeMoreCardsButton" destination="QB1-PU-rlW" id="nnd-Dj-mD3"/>
                         <outlet property="scoreLabel" destination="haJ-kR-e0U" id="b38-dv-9HT"/>
                         <outletCollection property="setCardButtons" destination="1A8-th-gBE" collectionClass="NSMutableArray" id="mBm-wz-a6q"/>
@@ -302,6 +329,30 @@
                         <outletCollection property="setCardButtons" destination="7wb-f2-WQE" collectionClass="NSMutableArray" id="EpX-4U-BXB"/>
                         <outletCollection property="setCardButtons" destination="p0h-4b-iee" collectionClass="NSMutableArray" id="VJR-GW-0U8"/>
                         <outletCollection property="setCardButtons" destination="Gav-Pd-kTI" collectionClass="NSMutableArray" id="KyB-49-vIN"/>
+                        <outletCollection property="cardButtons" destination="1A8-th-gBE" collectionClass="NSMutableArray" id="64i-WQ-9lY"/>
+                        <outletCollection property="cardButtons" destination="d29-nN-j0W" collectionClass="NSMutableArray" id="t85-yp-zpk"/>
+                        <outletCollection property="cardButtons" destination="E5h-qU-Kzm" collectionClass="NSMutableArray" id="a9s-23-2bH"/>
+                        <outletCollection property="cardButtons" destination="B0u-MM-Au3" collectionClass="NSMutableArray" id="6BK-fI-cah"/>
+                        <outletCollection property="cardButtons" destination="Lq4-sB-elW" collectionClass="NSMutableArray" id="6B3-IB-PML"/>
+                        <outletCollection property="cardButtons" destination="pHs-zS-0Ox" collectionClass="NSMutableArray" id="V9g-Fc-Suq"/>
+                        <outletCollection property="cardButtons" destination="Jay-PF-rTg" collectionClass="NSMutableArray" id="ZFH-Iv-t4j"/>
+                        <outletCollection property="cardButtons" destination="OSi-ok-xrt" collectionClass="NSMutableArray" id="hjR-I9-vL8"/>
+                        <outletCollection property="cardButtons" destination="4D3-9y-p3R" collectionClass="NSMutableArray" id="w6Z-UJ-6uY"/>
+                        <outletCollection property="cardButtons" destination="7rJ-uA-Zui" collectionClass="NSMutableArray" id="Vbh-6N-0lm"/>
+                        <outletCollection property="cardButtons" destination="vfH-mI-sFV" collectionClass="NSMutableArray" id="9Gv-V8-XQm"/>
+                        <outletCollection property="cardButtons" destination="k86-VU-lJb" collectionClass="NSMutableArray" id="BLq-l8-d7r"/>
+                        <outletCollection property="cardButtons" destination="DFH-XX-s3m" collectionClass="NSMutableArray" id="RzT-se-Zdh"/>
+                        <outletCollection property="cardButtons" destination="evv-7j-17J" collectionClass="NSMutableArray" id="Y4U-8i-NJg"/>
+                        <outletCollection property="cardButtons" destination="MLf-Ej-vsI" collectionClass="NSMutableArray" id="r15-O8-4ow"/>
+                        <outletCollection property="cardButtons" destination="5XG-eq-A7x" collectionClass="NSMutableArray" id="Rsc-2Q-8ok"/>
+                        <outletCollection property="cardButtons" destination="4xA-A6-nOt" collectionClass="NSMutableArray" id="sUC-1E-Nb8"/>
+                        <outletCollection property="cardButtons" destination="Pef-95-Csf" collectionClass="NSMutableArray" id="eJ0-Rq-omG"/>
+                        <outletCollection property="cardButtons" destination="zlp-EE-OaV" collectionClass="NSMutableArray" id="h9w-Vk-7n6"/>
+                        <outletCollection property="cardButtons" destination="bNO-BZ-N54" collectionClass="NSMutableArray" id="7qQ-Ni-ZSF"/>
+                        <outletCollection property="cardButtons" destination="Gav-Pd-kTI" collectionClass="NSMutableArray" id="gEt-0b-IUA"/>
+                        <outletCollection property="cardButtons" destination="7wb-f2-WQE" collectionClass="NSMutableArray" id="OPO-Dm-oRg"/>
+                        <outletCollection property="cardButtons" destination="p0h-4b-iee" collectionClass="NSMutableArray" id="1ko-j7-kQJ"/>
+                        <outletCollection property="cardButtons" destination="obo-oq-hk6" collectionClass="NSMutableArray" id="kp2-aE-ziU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
