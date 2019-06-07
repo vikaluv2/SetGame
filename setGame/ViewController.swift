@@ -12,6 +12,8 @@ class ViewController: UIViewController {
     
     var game = SetCardGame()
     
+    private var Score //game score
+    
     @IBOutlet weak var ScoreLabel: UILabel!
     
     @IBOutlet var cardButtons: [UIButton]!
@@ -35,6 +37,11 @@ class ViewController: UIViewController {
                 cardButtons[index].alpha = 0
             }
             
+            Score = 0;
+            for index in cardButtons.indices{
+                
+                if
+            }
             // for each card button on the UI do the following
             // if the model has a card at that position {
             //make card appear

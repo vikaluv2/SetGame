@@ -9,7 +9,7 @@
 import Foundation
 
 struct SetCardGame {
-    
+    //DA LOGIC
     
     private var deck = SetCardDeck()
     private(set) var cardsInPlay = [SetCard]()
