@@ -117,11 +117,18 @@ class ViewController: UIViewController {
         
         //In here you will have 4 switch statements to update the button to match the card
         //You will also need to update the buttons selection ...
+        if {
+            
+        
         //If the card is select, draw a border around the cardButton
-        cardButtons.layer.borderWidth = 3.0
-        cardButtons.layer.borderColor = UIColor.blue.cgColor
-        cardButtons.layer.cornerRadius = 8.0
-        //else remove the border around the button.
+        cardButton.layer.borderWidth = 3.0
+        cardButton.layer.borderColor = UIColor.blue.cgColor
+        cardButton.layer.cornerRadius = 8.0
+        }else {
+             //else remove the border around the button.
+            
+        }
+       
     }
     
     
