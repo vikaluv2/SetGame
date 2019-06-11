@@ -18,7 +18,6 @@ class ViewController: UIViewController {
     
     @IBOutlet var cardButtons: [UIButton]!
     
-    
     @IBOutlet weak var DealThree: UIButton!
     
     
@@ -37,8 +36,8 @@ class ViewController: UIViewController {
                 cardButtons[index].alpha = 0
             }
             
-            Score+=3
-            Score-=3 
+           
+            Score-=3 //decrements by 3
             for index in cardButtons.indices{
                 
                 if
@@ -47,10 +46,11 @@ class ViewController: UIViewController {
             // if the model has a card at that position {
             //make card appear
             //make card look like the card in the model by calling
-            //update(cardButton: cardButtons[index], with: game.cardsInPlay[index])
-            // } else {
-            //make card disappear
-            //}
+            update(cardButton: cardButtons[index], with: game.cardsInPlay[index])
+            } else {
+            make card disappear
+            }
+           Score+=3 //increments by 3
             //update the score
         }
     }
@@ -110,18 +110,21 @@ class ViewController: UIViewController {
         let attributes: [NSAttributedString.Key : Any] = [
             .strokeColor : color,
             .strokeWidth : 5.0
-            
         ]
         
         cardButton.setAttributedTitle(NSAttributedString(string: buttonTitle, attributes: attributes), for: .normal)
         
+        
         //In here you will have 4 switch statements to update the button to match the card
         //You will also need to update the buttons selection ...
         //If the card is select, draw a border around the cardButton
+        cardButtons.layer.borderWidth = 3.0
+        cardButtons.layer.borderColor = UIColor.blue.cgColor
+        cardButtons.layer.cornerRadius = 8.0
         //else remove the border around the button.
     }
     
     
     
     
-}
+

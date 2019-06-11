@@ -26,7 +26,9 @@ struct SetCardGame {
     
     var isMatch: Bool {
         if selectedCards = isAMatch {
-        //            return true
+        //
+            
+            return true
         //
         //TODO write code that checks if the current select is a match or not. Return true if it is.
         return false
@@ -67,4 +69,5 @@ extension Array where Element: Equatable {
             self.remove(at: pos)
         }
     }
+}
 }

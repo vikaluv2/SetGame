@@ -15,12 +15,12 @@ struct SetCard: Equatable, CustomStringConvertible {
     var shade: Variant
     var number: Variant
     
+    //tells if its a match
     static func isAMatch(with card1: SetCard, and card2: SetCard, and card3: SetCard) -> Bool {
         return true
     }
     
     // MARK: Equatable
-    
     static func ==(lhs: SetCard, rhs: SetCard) -> Bool {
         return (lhs.color == rhs.color) && (lhs.shape == rhs.shape) && (lhs.shade == rhs.shade) && (lhs.number == rhs.number)
     }
