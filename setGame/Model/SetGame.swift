@@ -16,7 +16,7 @@ struct SetCardGame {
     private(set) var selectedCards = [SetCard]()
     private(set) var score = 0
     
-    private static let initialCardCount = 12
+    private static let initialCardCount = 12 //always start
     
     init() {
         for _ in 0..<SetCardGame.initialCardCount {
@@ -25,17 +25,17 @@ struct SetCardGame {
     }
     
     var isMatch: Bool {
-        if selectedCards = isAMatch {
-        //
+        
             return true
+        }
+        //
+        
         //
         //TODO write code that checks if the current select is a match or not. Return true if it is.
         return false
-    }
-    }
     
     mutating func selectCard(at index: Int) {
-        //        if selectedCards  {
+        //if selectedCards  {
         //
         //        }
         //the view will call this when the user taps on a card
@@ -43,7 +43,7 @@ struct SetCardGame {
     }
     
     mutating func deal3Cards() {
-           let SetCard = deck.draw()!
+        _ = deck.draw()
         
         //if you can, deal 3 more cards into play
         //SHOULD NOT check for 24 cards, that's a view thing
@@ -54,8 +54,12 @@ struct SetCardGame {
     }
     
 }
-    
-    
+
+    func deselect(for card: UIButton){
+        if SetCard.is {
+            
+        }
+}
 
 
 extension Array where Element: Equatable {

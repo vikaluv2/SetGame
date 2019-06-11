@@ -29,7 +29,8 @@ struct SetCardDeck {
         if cards.count > 0 {
             return cards.remove(at: cards.count.arc4Random)
         } else {
-            return nil
+            return nil 
+        
         }
     }
     
