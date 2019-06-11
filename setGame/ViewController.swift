@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var game = SetCardGame()
+    let cardz = game.cards[index]
     
     private var Score = 0 //game score
     
@@ -44,12 +45,22 @@ class ViewController: UIViewController {
             //make card look like the card in the model by calling
             update(cardButton: cardButtons[index], with: game.cardsInPlay[index])
         } else do{
+            
             // make card disappear
             }
-           Score+=3 //increments by 3
-            //update the score
+           Score+=3
+           updateScore()
+            //update the score //increments by 3
     }
 
+    private func updateScore() {
+        let attributes: [NSAttributedString.Key:Any] = [
+            .strokeColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1),
+            .strokeWidth: 5
+        ]
+        let attributedText = NSAttributedString(string: "Flips: \(Score)", attributes: attributes)
+        ScoreLabel.attributedText = attributedText
+    }
     
      //you will want to connect your card buttons to this method
     @IBAction func cardTapped(_ sender: UIButton) {
@@ -63,13 +74,18 @@ class ViewController: UIViewController {
         }else{
             print("chosen card was not in cardButtons")
         }
+        
     }
             
     //you will want to connect your deal button to this method
     @IBAction func dealPressed() {
+        for index in cardButtons.indices {
+            
         //make sure you won't overfill your UI
         //IF not tell the game to deal 3 cards
+        card.deal3Cards()
         updateViewFromModel()
+    }
     }
     
     @IBAction func newGame(_ sender: UIButton) {
@@ -79,12 +95,12 @@ class ViewController: UIViewController {
     }
         
     //    private func newSetCardGame() -> SetCardGame {
-    //        return SetCardGame(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
+    //        return SetCardGame(numberOfPairsOfCards: (cardButtons.count + 1) / 3)
     //    }
             
     private func updateCardButton(for card: UIButton, withColor color: UIColor) {
         //card.setTitle(emoji, for: UIControl.State.normal)
-        card.backgroundColor = color
+        card.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.6)
             }
     
     
@@ -125,19 +141,22 @@ class ViewController: UIViewController {
         cardButton.setAttributedTitle(NSAttributedString(string: buttonTitle, attributes: attributes), for: .normal)
         
         }
-        
+    
         //In here you will have 4 switch statements to update the button to match the card
         //You will also need to update the buttons selection ...
-        if cards.isSelected == true{
+    for index in cardButton[indices]{
+        if cardz.isSelected == true{
             //If the card is select, draw a border around the cardButton
             cardButton.layer.borderWidth = 3.0
-            cardButton.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1) color.literal
+            cardButton.layer.borderColor = UIColor
             cardButton.layer.cornerRadius = 8.0
         }else {
-             //else remove the border around the button.
+            //else remove the border around the button.
             cardButton.layer.borderWidth = 0.0
         }
-       
     }
+    
+}
+
     
 
