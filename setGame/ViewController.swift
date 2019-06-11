@@ -36,7 +36,6 @@ class ViewController: UIViewController {
                 cardButtons[index].alpha = 0
             }
             
-           
             Score-=3 //decrements by 3
             for index in cardButtons.indices{
                 
@@ -48,20 +47,20 @@ class ViewController: UIViewController {
             //make card look like the card in the model by calling
             update(cardButton: cardButtons[index], with: game.cardsInPlay[index])
             } else {
-            make card disappear
+            // make card disappear
             }
            Score+=3 //increments by 3
             //update the score
         }
-    }
     
     //you will want to connect your card buttons to this method
     @IBAction func cardTapped(_ sender: UIButton) {
         //find out with cardButton was tapped
         //tell the game to select that card
+        
+        
         updateViewFromModel()
     }
-    
     //you will want to connect your deal button to this method
     @IBAction func dealPressed() {
         //make sure you won't overfill your UI
@@ -115,15 +114,14 @@ class ViewController: UIViewController {
         cardButton.setAttributedTitle(NSAttributedString(string: buttonTitle, attributes: attributes), for: .normal)
         
         
+        
         //In here you will have 4 switch statements to update the button to match the card
         //You will also need to update the buttons selection ...
-        if {
-            
-        
-        //If the card is select, draw a border around the cardButton
-        cardButton.layer.borderWidth = 3.0
-        cardButton.layer.borderColor = UIColor.blue.cgColor
-        cardButton.layer.cornerRadius = 8.0
+        if cardButton.IsAMatch{
+            //If the card is select, draw a border around the cardButton
+            cardButton.layer.borderWidth = 3.0
+            cardButton.layer.borderColor = UIColor.blue.cgColor
+            cardButton.layer.cornerRadius = 8.0
         }else {
              //else remove the border around the button.
             
@@ -131,7 +129,4 @@ class ViewController: UIViewController {
        
     }
     
-    
-    
-    
-
+}

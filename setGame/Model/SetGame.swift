@@ -27,11 +27,11 @@ struct SetCardGame {
     var isMatch: Bool {
         if selectedCards = isAMatch {
         //
-            
             return true
         //
         //TODO write code that checks if the current select is a match or not. Return true if it is.
         return false
+    }
     }
     
     mutating func selectCard(at index: Int) {
@@ -43,7 +43,7 @@ struct SetCardGame {
     }
     
     mutating func deal3Cards() {
-        
+           let SetCard = deck.draw()!
         
         //if you can, deal 3 more cards into play
         //SHOULD NOT check for 24 cards, that's a view thing
@@ -54,6 +54,9 @@ struct SetCardGame {
     }
     
 }
+    
+    
+
 
 extension Array where Element: Equatable {
     mutating func inOrOut(element: Element) {
@@ -70,4 +73,4 @@ extension Array where Element: Equatable {
         }
     }
 }
-}
+
